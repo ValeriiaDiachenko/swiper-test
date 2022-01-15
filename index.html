@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="swiper mySwiper">
+            <div class="slider swiper-wrapper">
+                <div class="slider-item swiper-slide dima">
+                    <ul>
+                        <li><img src="" alt=""></li>
+                        <li><span>Nullam viverra</span><span>consectetuer. Quisque</span><span>cursus et, porttitor risus.</span>
+                        <span>Aliquam sem. In hendrerit</span><span>nulla quam nunc,</span><span>accumsan congue. Lorem</span>
+                    <span>ipsum primis in nibh vel</span><span>risus.</span></li>
+                        <li><span>Emily, Los Angeles</span></li>
+                    </ul>
+                </div>
+                <div class="slider-item swiper-slide yura">Yura</div>
+                <div class="slider-item swiper-slide ilona">Ilona</div>
+                <div class="slider-item swiper-slide tanya">Tanya</div>
+                <div class="slider-item swiper-slide valera">Valera</div>
+                <div class="slider-item swiper-slide vlad">Vlad</div>
+                <div class="slider-item swiper-slide anna">Anna</div>
+                <div class="slider-item swiper-slide sveta">Sveta</div>
+                <div class="slider-item swiper-slide lera">Lera</div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                },
+            loop: true,
+            followFinger: false,
+            speed: 1500,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            on: {
+                init() {
+                    this.el.addEventListener('mouseenter', () => {
+                        this.autoplay.stop();
+                    });
+
+                    this.el.addEventListener('mouseleave', () => {
+                        this.autoplay.start();
+                    });
+                },
+            }
+
+        });
+    </script>
+</body>
+</html>
